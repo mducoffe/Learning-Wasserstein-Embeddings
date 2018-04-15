@@ -97,12 +97,14 @@ if __name__=="__main__":
     import argparse
     parser = argparse.ArgumentParser(description='Dataset')
     parser.add_argument('--dataset_name', type=str, default='cat', help='dataset name')
-    parser.add_argument('--n_pairwise', type=int, default=100, help='number of pairwise emd')
-    parser.add_argument('--n_iter', type=int, default=1, help='number of iterations')
+    parser.add_argument('--n_pairwise', type=int, default=10000, help='number of pairwise emd')
+    parser.add_argument('--n_iter', type=int, default=10, help='number of iterations')
+    parser.add_argument('--train', type=bool, default=True, help='number of iterations')
     
     args = parser.parse_args()                                                                                                                                                                                                                             
     dataset_name=args.dataset_name
     n_pairwise=args.n_pairwise
     n_iter=args.n_iter
+    train=args.train
 
-    run_emd(dataset_name, True, n_pairwise, n_iter)
+    run_emd(dataset_name, train, n_pairwise, n_iter)
